@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Commands
+
+`npm install bootstrap bootstrap-icons`
+
+`ng add @fortawesome/angular-fontawesome`
+
+## Initial Steps
+
+1. Config bootstrap (angular.json)
+2. Add fontawesome
+3. Import google fonts (styles.scss)
+4. Config font styles.scss
+
