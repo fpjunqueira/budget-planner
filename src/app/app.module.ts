@@ -8,6 +8,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainComponent } from './main/main.component';
 import { SideNavComponent } from './shared/side-nav/side-nav.component';
 import { HomeComponent } from './main/home/home.component';
+import { DashboardComponent } from './main/dashboard/dashboard.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SpendingComponent } from './main/spending/spending.component';
+import { AnalyticsComponent } from './main/analytics/analytics.component';
+import { SettingsComponent } from './main/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +21,11 @@ import { HomeComponent } from './main/home/home.component';
     MainComponent,
     SideNavComponent,
     HomeComponent,
+    DashboardComponent,
+    FooterComponent,
+    SpendingComponent,
+    AnalyticsComponent,
+    SettingsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],

@@ -1,9 +1,15 @@
 <div class="side-nav-content">
   <ul class="nav-list" [ngClass]="{ 'nav-list-open': sideNavCollapsed }">
-    <li class="nav-list-item" *ngFor="let item of navItems">
+    <li
+      class="nav-list-item"
+      *ngFor="let item of navItems"
+      [routerLink]="[item.routeLink]"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <fa-icon [icon]="item.icon"></fa-icon>
       <span>
-        <a href="#">{{ item.name }}</a>
+        <a>{{ item.name }}</a>
       </span>
     </li>
   </ul>

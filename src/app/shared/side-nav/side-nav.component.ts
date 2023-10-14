@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavItem, navData } from './side-nav-item';
+import { NavItem, navData } from './side-nav-data';
 
 @Component({
   selector: 'app-side-nav',

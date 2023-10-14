@@ -15,6 +15,7 @@
       display: flex;
       align-items: center;
       height: 50px;
+      cursor: pointer;
 
       .ng-fa-icon {
         font-size: 20px;
@@ -39,7 +40,17 @@
   }
 }
 
-.nav-list-open .nav-list-item:hover {
+.active {
+  background-color: rgb(0, 87, 82);
+  border-radius: 10px;
+}
+
+.nav-list-item:hover {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
+}
+
+.nav-list:not(.nav-list-open) {
+  width: 42px;
+  overflow-x: hidden;
 }
