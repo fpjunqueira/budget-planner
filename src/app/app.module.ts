@@ -7,6 +7,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainComponent } from './main/main.component';
 import { SideNavComponent } from './shared/side-nav/side-nav.component';
+import { HomeComponent } from './main/home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SideNavComponent } from './shared/side-nav/side-nav.component';
     HeaderComponent,
     MainComponent,
     SideNavComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],

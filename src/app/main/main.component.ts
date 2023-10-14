@@ -1,13 +1,10 @@
-import { Component, Input } from '@angular/core';
-
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent {}
+export class MainComponent {
+  sideNavCollapsed: boolean = false;
+}
