@@ -10,16 +10,4 @@ interface SideNavToggle {
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent {
-  @Input() isSideNavCollapsed = false;
-  @Input() screenWidth = 0;
-
-  getBodyClass(): string {
-    return '';
-  }
-
-  onToggleSideNav(data: SideNavToggle) {
-    this.screenWidth = data.screenWidth;
-    this.isSideNavCollapsed = data.collapsed;
-  }
-}
+export class MainComponent {}
