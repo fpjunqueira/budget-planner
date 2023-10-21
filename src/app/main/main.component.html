@@ -1,19 +1,26 @@
 <div class="container-fluid g-0">
   <!-- Header -->
-  <app-header (sideNavToggled)="sideNavCollapsed = $event"></app-header>
-  <!-- Main -->
-  <main>
+  <header>
+    <app-header (sideNavToggled)="sideNavCollapsed = $event"></app-header>
+  </header>
+
+  <section class="d-flex">
     <!-- Side Nav -->
-    <app-side-nav
-      [sideNavCollapsed]="sideNavCollapsed"
-      [ngClass]="{ 'app-side-nav-open': sideNavCollapsed }"
-    ></app-side-nav>
-    <!-- Main Display area -->
-    <div
-      class="display-area p-3"
-      [ngClass]="{ 'display-area-shrink': sideNavCollapsed }"
-    >
-      <router-outlet></router-outlet>
-    </div>
-  </main>
+    <app-side-nav [sideNavCollapsed]="sideNavCollapsed"></app-side-nav>
+
+    <section class="flex-grow-1 d-flex align-items-start flex-column m-3">
+      <!-- Breadcrumbs -->
+      <app-breadcrumbs></app-breadcrumbs>
+
+      <!-- Content -->
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+
+      <!-- Footer -->
+      <footer class="mt-auto">
+        <app-footer></app-footer>
+      </footer>
+    </section>
+  </section>
 </div>

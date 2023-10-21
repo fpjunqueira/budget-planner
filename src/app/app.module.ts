@@ -13,6 +13,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { SpendingComponent } from './main/spending/spending.component';
 import { AnalyticsComponent } from './main/analytics/analytics.component';
 import { SettingsComponent } from './main/settings/settings.component';
+import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SettingsComponent } from './main/settings/settings.component';
     SpendingComponent,
     AnalyticsComponent,
     SettingsComponent,
+    BreadcrumbsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
