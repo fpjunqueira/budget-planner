@@ -1,7 +1,9 @@
 import {
   IconDefinition,
   faChartLine,
+  faCircleDollarToSlot,
   faDashboard,
+  faDollar,
   faHouse,
   faMoneyBill1Wave,
   faToolbox,
@@ -24,24 +26,30 @@ export function navData(): NavItem[] {
     },
     {
       number: '2',
+      name: 'Cash Flow',
+      icon: faCircleDollarToSlot,
+      routeLink: 'flow'
+    },
+    {
+      number: '3',
       name: 'Dashboard',
       icon: faDashboard,
       routeLink: 'dashboard'
     },
     {
-      number: '3',
+      number: '4',
       name: 'Spending',
       icon: faMoneyBill1Wave,
       routeLink: 'spending'
     },
     {
-      number: '4',
+      number: '5',
       name: 'Analytics',
       icon: faChartLine,
       routeLink: 'analytics'
     },
     {
-      number: '5',
+      number: '6',
       name: 'Settings',
       icon: faToolbox,
       routeLink: 'settings'

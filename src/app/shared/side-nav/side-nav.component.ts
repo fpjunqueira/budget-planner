@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NavItem, navData } from './side-nav-data';
+import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,4 +10,11 @@ import { NavItem, navData } from './side-nav-data';
 export class SideNavComponent {
   @Input() sideNavCollapsed: boolean = false;
   navItems: NavItem[] = navData();
+
+  faAnglesRight = faAnglesRight;
+  faAnglesLeft = faAnglesLeft;
+
+  sideNavToggle() {
+    throw new Error('Method not implemented.');
+  }
 }

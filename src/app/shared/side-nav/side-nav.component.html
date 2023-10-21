@@ -1,5 +1,5 @@
 <nav
-  class="side-nav-content"
+  class="side-nav-content d-flex flex-column "
   [ngClass]="{ 'side-nav-content-open': sideNavCollapsed }"
 >
   <ul class="nav-list">
@@ -14,5 +14,11 @@
         <a>{{ item.name }}</a>
       </span>
     </li>
+  </ul>
+  <ul class="nav-list mt-auto">
+    <div class="side-nav-button px-2 me-3 text-light" (click)="sideNavToggle()">
+      <fa-icon *ngIf="sideNavCollapsed" [icon]="faAnglesRight"></fa-icon>
+      <fa-icon *ngIf="!sideNavCollapsed" [icon]="faAnglesLeft"></fa-icon>
+    </div>
   </ul>
 </nav>
