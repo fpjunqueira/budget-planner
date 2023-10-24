@@ -18,4 +18,10 @@ describe('CashFlowComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set the month correctly', () => {
+    const expectedMonth = `${new Date().getMonth() + 1}/${new Date().getFullYear()}`;
+    expect(component.month).toEqual(expectedMonth);
+  });
+
 });
