@@ -5,6 +5,7 @@ import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { SpendingComponent } from './main/spending/spending.component';
 import { AnalyticsComponent } from './main/analytics/analytics.component';
 import { SettingsComponent } from './main/settings/settings.component';
+import { CashFlowComponent } from './main/cash-flow/cash-flow.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+  },
+  {
+    path: 'flow',
+    component: CashFlowComponent
   },
   {
     path: 'spending',
