@@ -8,7 +8,7 @@ import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./side-nav.component.scss'],
 })
 export class SideNavComponent {
-  @Input() sideNavCollapsed: boolean = false;
+  @Input() sideNavCollapsed = false;
   navItems: NavItem[] = navData();
 
   faAnglesRight = faAnglesRight;

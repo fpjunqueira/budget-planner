@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cash-flow.component.scss'],
 })
 export class CashFlowComponent {
-  month: string = `${(new Date().getMonth() + 1).toString()}/${new Date()
+  month = `${(new Date().getMonth() + 1).toString()}/${new Date()
     .getFullYear()
     .toString()}`;
 }
