@@ -1,5 +1,5 @@
 # Base image
-FROM node:14.17.0 AS build
+FROM node:latest AS build
 
 # Set working directory
 WORKDIR /src/app
@@ -15,10 +15,10 @@ COPY . .
 RUN npm run build
 
 # Stage 2 - Use Nginx as web server
-FROM nginx:1.21.0-alpine
+FROM nginx:latest
 
 # Copy the built application to the Nginx public folder
-COPY --from=build /app/dist/budget-planner /usr/share/nginx/html
+COPY dist/budget-planner /usr/share/nginx/html
 
 # Copy the custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf

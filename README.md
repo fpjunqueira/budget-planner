@@ -40,8 +40,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 3. Import google fonts (styles.scss)
 4. Config font styles.scss
 
+## Docker
+
+`docker-compose up`
+
 ## TODO
 
 * <strong>Toogle buttom</strong>
 * Scroll side nav
-* Z-index no header
+* Z-index header
