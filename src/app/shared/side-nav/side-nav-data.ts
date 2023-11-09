@@ -3,7 +3,6 @@ import {
   faChartLine,
   faCircleDollarToSlot,
   faDashboard,
-  faDollar,
   faHouse,
   faMoneyBill1Wave,
   faToolbox,

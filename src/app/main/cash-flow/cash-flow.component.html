@@ -1,15 +1,5 @@
 <div class="d-flex align-items-center justify-content-center">
-  <p class="fs-1 fw-bold">{{ month }}</p>
+  <p class="fs-1 fw-bold">{{ monthName }}</p>
 </div>
 
-<div class="entry input">
-  <span>Date: 2023-10-21</span>
-  <span class="badge">Salary</span>
-  <span>+$2,500.00</span>
-</div>
-
-<div class="entry output">
-  <span>Date: 2023-10-20</span>
-  <span class="badge">Groceries</span>
-  <span>-$150.00</span>
-</div>
+<app-entry *ngFor="let entry of entries" [entry]="entry"></app-entry>

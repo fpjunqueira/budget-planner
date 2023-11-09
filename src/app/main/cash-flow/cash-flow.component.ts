@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Entry } from './entry/entry.model';
+import { entryData } from './entry/entry-data.mock';
 
 @Component({
   selector: 'app-cash-flow',
@@ -6,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cash-flow.component.scss'],
 })
 export class CashFlowComponent {
-  month = `${(new Date().getMonth() + 1).toString()}/${new Date()
-    .getFullYear()
-    .toString()}`;
+  date: Date = new Date();
+  monthName = new Date().toLocaleString('default', { month: 'long' });
+  entries: Entry[] | undefined = entryData();
 }

@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between align-items-center entry">
+  <div class="d-flex align-items-center">
+    <div
+      class="icon"
+      [ngClass]="{
+        input: entry.type === EntryType.INCOMING,
+        output: entry.type === EntryType.OUTGOING
+      }"
+    >
+      <fa-icon
+        [icon]="
+          entry.type === EntryType.INCOMING ? faArrowTrendUp : faArrowTrendDown
+        "
+      ></fa-icon>
+    </div>
+
+    <div class="description d-flex flex-column">
+      <span class="type">{{ entry.type === EntryType.INCOMING ? 'Incomming' : 'Outgoing' }}</span>
+      <span
+        ><strong>{{ entry.description }}</strong></span
+      >
+      <span>{{ entry.date | date }}</span>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column">
+    <div *ngFor="let label of entry.labels" class="badge">{{ label }}</div>
+  </div>
+
+  <div class="d-flex flex-column align-items-end justify-content-end">
+    <span>{{entry.settled}}</span>
+    <span>R$ {{entry.amount}}</span>
+  </div>
+</div>

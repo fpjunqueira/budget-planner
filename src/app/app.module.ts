@@ -15,6 +15,7 @@ import { AnalyticsComponent } from './main/analytics/analytics.component';
 import { SettingsComponent } from './main/settings/settings.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { CashFlowComponent } from './main/cash-flow/cash-flow.component';
+import { EntryComponent } from './main/cash-flow/entry/entry.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CashFlowComponent } from './main/cash-flow/cash-flow.component';
     SettingsComponent,
     BreadcrumbsComponent,
     CashFlowComponent,
+    EntryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
