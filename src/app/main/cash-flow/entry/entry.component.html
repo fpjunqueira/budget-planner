@@ -15,20 +15,33 @@
     </div>
 
     <div class="description d-flex flex-column">
-      <span class="type">{{ entry.type === EntryType.INCOMING ? 'Incomming' : 'Outgoing' }}</span>
+      <span
+        [ngClass]="{
+          incomming: entry.type === EntryType.INCOMING,
+          outgoing: entry.type === EntryType.OUTGOING
+        }"
+        >{{
+          entry.type === EntryType.INCOMING ? "Incomming" : "Outgoing"
+        }}</span
+      >
       <span
         ><strong>{{ entry.description }}</strong></span
       >
-      <span>{{ entry.date | date }}</span>
+      <span class="date"
+        ><strong>{{ entry.date | date }}</strong></span
+      >
     </div>
   </div>
 
-  <div class="d-flex flex-column">
-    <div *ngFor="let label of entry.labels" class="badge">{{ label }}</div>
-  </div>
-
   <div class="d-flex flex-column align-items-end justify-content-end">
-    <span>{{entry.settled}}</span>
-    <span>R$ {{entry.amount}}</span>
+    <span class="settled">{{ entry.settled ? 'Settled' : 'Unsettled'}}</span>
+    <span
+      ><strong>{{
+        entry.amount | currency : "BRL" : "symbol" : "1.2-2"
+      }}</strong></span
+    >
+    <div class="d-flex">
+      <div *ngFor="let label of entry.labels" class="badge">{{ label }}</div>
+    </div>
   </div>
 </div>

@@ -10,5 +10,5 @@ import { entryData } from './entry/entry-data.mock';
 export class CashFlowComponent {
   date: Date = new Date();
   monthName = new Date().toLocaleString('default', { month: 'long' });
-  entries: Entry[] | undefined = entryData();
+  entries: Entry[] = entryData();
 }
