@@ -3,6 +3,9 @@ import { Component, Input } from '@angular/core';
 import {
   faArrowTrendDown,
   faArrowTrendUp,
+  faCircleXmark,
+  faCircleCheck
+
 } from '@fortawesome/free-solid-svg-icons';
 import { Entry } from './entry.model';
 import { EntryType } from './entry-type';
@@ -18,4 +21,6 @@ export class EntryComponent {
   EntryType = EntryType;
   faArrowTrendDown = faArrowTrendDown;
   faArrowTrendUp = faArrowTrendUp;
+  faCircleXmark = faCircleXmark;
+  faCircleCheck = faCircleCheck;
 }
