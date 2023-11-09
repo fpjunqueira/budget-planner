@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  sideNavCollapsed = false;
+  sideNavCollapsed = true;
 }

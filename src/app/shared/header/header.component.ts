@@ -8,7 +8,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   @Output() sideNavToggled = new EventEmitter<boolean>();
-  collapsed = false;
+  collapsed = true;
   faBars = faBars;
 
   SideNavToggle() {

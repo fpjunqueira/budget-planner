@@ -21,6 +21,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { environment } from '../environments/environment';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
