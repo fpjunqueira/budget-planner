@@ -33,6 +33,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `ng add @fortawesome/angular-fontawesome`
 
+`npm install -g firebase-tools`
+
+`ng add @angular/fire`
+
 ## Initial Steps
 
 1. Config bootstrap (angular.json)
@@ -55,4 +59,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Entry component Layout
 * Browse between months list
 * CSS Varibles
-* 
+* Anotar como configurar boo
