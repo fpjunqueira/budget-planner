@@ -1,0 +1,95 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="entry-modal">
+    {{ action === ActionType.SAVE ? "New Entry" : "Update Entry" }}
+  </h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="entryForm">
+    <!-- amount -->
+    <div class="form-group mb-3">
+      <label for="inputAmount" class="">Amount:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="inputAmount"
+        placeholder="00.00"
+        formControlName="amount"
+      />
+    </div>
+    <!-- description -->
+    <div class="form-group mb-3">
+      <label for="inputDescription">Description:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputDescription"
+        placeholder="Description"
+        formControlName="description"
+      />
+    </div>
+    <!-- date -->
+    <div class="form-group mb-3">
+      <label for="inputDate">Date:</label>
+      <div class="input-group">
+        <input
+          id="inputDate"
+          class="form-control"
+          placeholder="yyyy-mm-dd"
+          name="dp"
+          ngbDatepicker
+          #dp="ngbDatepicker"
+          formControlName="date"
+
+        />
+        <button
+          class="btn btn-outline-secondary bi bi-calendar3"
+          (click)="dp.toggle()"
+          type="button"
+        ></button>
+      </div>
+    </div>
+    <div class="row">
+      <!-- type -->
+      <div class="form-group mb-3 col-md-6">
+        <label for="inputType">Type</label>
+        <select id="inputType" class="form-control">
+          <option selected>Choose...</option>
+          <option>Incoming</option>
+          <option>Outgoing</option>
+        </select>
+      </div>
+      <!-- settled -->
+      <div class="form-group mb-3 col-md-6">
+        <label for="settled">Is Settled</label>
+        <select id="settled" class="form-control">
+          <option selected>Choose...</option>
+          <option>Settled</option>
+          <option>Unsettled</option>
+        </select>
+      </div>
+    </div>
+    <!-- Labels -->
+    <div class="form-group pt-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Check me out </label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="save()"
+  >
+    Save
+  </button>
+</div>

@@ -48,6 +48,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `docker-compose up`
 
+Ports:
+`192.168.101.6:8080/home`
+
 ## TODO Main Layout
 
 * <strong>Toogle buttom</strong>

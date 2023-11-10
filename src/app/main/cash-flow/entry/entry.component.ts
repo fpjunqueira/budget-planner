@@ -1,11 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import {
   faArrowTrendDown,
   faArrowTrendUp,
   faCircleXmark,
-  faCircleCheck
-
+  faCircleCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { Entry } from './entry.model';
 import { EntryType } from './entry-type';
@@ -16,11 +15,16 @@ import { EntryType } from './entry-type';
   styleUrls: ['./entry.component.scss'],
 })
 export class EntryComponent {
-  @Input() entry!: Entry;
+  @Input() entry: Entry;
+  @Output() entryClicked = new EventEmitter<Entry>();
 
   EntryType = EntryType;
   faArrowTrendDown = faArrowTrendDown;
   faArrowTrendUp = faArrowTrendUp;
   faCircleXmark = faCircleXmark;
   faCircleCheck = faCircleCheck;
+
+  entryClick() {
+    this.entryClicked.emit(this.entry);
+  }
 }

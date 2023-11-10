@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { Entry } from './entry/entry.model';
-import { entryData } from './entry/entry-data.mock';
+import { entryData } from './entry-data.mock';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ActionType } from './action.type';
+import { EntryFormModalComponent } from './entry-form-modal/entry-form-modal.component';
+import { ENTRY_DATA } from './entry.injection-token';
 
 @Component({
   selector: 'app-cash-flow',
@@ -10,18 +12,30 @@ import { ActionType } from './action.type';
   styleUrls: ['./cash-flow.component.scss'],
 })
 export class CashFlowComponent {
-  date: Date = new Date();
   monthName = new Date().toLocaleString('default', { month: 'long' });
   entries: Entry[] = entryData();
-  action: ActionType = ActionType.SAVE;
   modalRef: NgbModalRef;
+  action: ActionType = ActionType.SAVE;
   ActionType = ActionType;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private activeModal: NgbModal) {}
 
-  open(content) {
-    this.modalRef = this.modalService.open(content, {
-      ariaLabelledBy: 'entry-modal',
+  add() {
+    const injector = Injector.create({
+      providers: [{ provide: ENTRY_DATA, useValue: null }],
+    });
+    this.modalRef = this.activeModal.open(EntryFormModalComponent, {
+      injector,
+    });
+  }
+
+  update(entry: Entry) {
+    const injector = Injector.create({
+      providers: [{ provide: ENTRY_DATA, useValue: entry }],
+    });
+
+    this.modalRef = this.activeModal.open(EntryFormModalComponent, {
+      injector,
     });
   }
 
