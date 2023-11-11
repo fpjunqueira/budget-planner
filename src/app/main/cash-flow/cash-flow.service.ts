@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { Entry } from './entry/entry.model';
 import {
   AngularFirestore,
@@ -18,7 +18,7 @@ export class CashFlowService {
     return this.entriesCollection.valueChanges();
   }
 
-  addEntries(entry: Entry) {
-    this.entriesCollection.add(entry);
+  addEntry(entry: Entry) {
+    return from(this.entriesCollection.add(entry));
   }
 }

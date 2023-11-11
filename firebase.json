@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/bud\t",
+    "public": "dist/budget-planner",
     "ignore": [
       "firebase.json",
       "**/.*",

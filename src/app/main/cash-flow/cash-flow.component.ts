@@ -1,24 +1,32 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { Entry } from './entry/entry.model';
 import { entryData } from './entry-data.mock';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ActionType } from './action.type';
 import { EntryFormModalComponent } from './entry-form-modal/entry-form-modal.component';
 import { ENTRY_DATA } from './entry.injection-token';
+import { Observable } from 'rxjs';
+import { CashFlowService } from './cash-flow.service';
 
 @Component({
   selector: 'app-cash-flow',
   templateUrl: './cash-flow.component.html',
   styleUrls: ['./cash-flow.component.scss'],
 })
-export class CashFlowComponent {
+export class CashFlowComponent implements OnInit{
+  entries$: Observable<Entry[]>;
+
   monthName = new Date().toLocaleString('default', { month: 'long' });
-  entries: Entry[] = entryData();
+  // entries: Entry[] = entryData();
   modalRef: NgbModalRef;
   action: ActionType = ActionType.SAVE;
   ActionType = ActionType;
 
-  constructor(private activeModal: NgbModal) {}
+  constructor(private activeModal: NgbModal, private service: CashFlowService,) {}
+
+  ngOnInit(): void {
+    this.entries$ = this.service.getEntries();
+  }
 
   add() {
     const injector = Injector.create({

@@ -2,9 +2,9 @@
   <p class="fs-1 fw-bold">{{ monthName }}</p>
 </div>
 
-<div class="entries">
+<div class="entries" >
   <app-entry
-    *ngFor="let entry of entries"
+    *ngFor="let entry of entries$ | async"
     [entry]="entry"
     (entryClicked)="update($event)"
   ></app-entry>
