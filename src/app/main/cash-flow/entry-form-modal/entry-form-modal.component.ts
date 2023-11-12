@@ -53,7 +53,7 @@ export class EntryFormModalComponent implements OnInit {
         date: ['', [Validators.required]],
         labels: this.fb.array(['']),
         settled: ['', [Validators.required]],
-        amount: [0, [Validators.required]],
+        amount: ['', [Validators.required]],
       });
     }
   }

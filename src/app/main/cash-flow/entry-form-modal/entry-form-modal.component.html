@@ -10,64 +10,141 @@
   ></button>
 </div>
 <div class="modal-body">
-  <form [formGroup]="entryForm">
+  <form [formGroup]="entryForm" (ngSubmit)="save()" novalidate>
     <div class="row">
       <!-- amount -->
       <div class="form-group mb-3 col-6">
-        <label class="form-label" for="inputAmount"><small>Amount:</small></label>
+        <label class="form-label" for="inputAmount"
+          ><small>Amount:</small></label
+        >
         <input
+          required
           type="number"
-          class="form-control"
+          class="form-control has-validation"
           id="inputAmount"
           placeholder="00.00"
           formControlName="amount"
+          [class.is-invalid]="
+            entryForm.controls['amount'].invalid &&
+            entryForm.controls['amount'].touched
+          "
         />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            entryForm.controls['amount'].invalid &&
+            entryForm.controls['amount'].touched
+          "
+        >
+          Amount is required
+        </div>
       </div>
 
       <!-- type -->
       <div class="form-group mb-3 col-6">
         <label class="form-label" for="inputType"><small>Type:</small></label>
-        <select id="inputType" class="form-control" formControlName="type">
+        <select
+          id="inputType"
+          class="form-control"
+          formControlName="type"
+          [class.is-invalid]="
+            entryForm.controls['type'].invalid &&
+            entryForm.controls['type'].touched
+          "
+        >
           <option selected></option>
           <option [value]="EntryType.INCOMING">Incoming</option>
           <option [value]="EntryType.OUTGOING">Outgoing</option>
         </select>
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            entryForm.controls['type'].invalid &&
+            entryForm.controls['type'].touched
+          "
+        >
+          Type is required
+        </div>
       </div>
     </div>
 
     <!-- description -->
     <div class="form-group mb-3">
-      <label class="form-label" for="inputDescription"><small>Description:</small></label>
+      <label class="form-label" for="inputDescription"
+        ><small>Description:</small></label
+      >
       <input
         type="text"
         class="form-control"
         id="inputDescription"
         placeholder="Description"
         formControlName="description"
+        [class.is-invalid]="
+          entryForm.controls['description'].invalid &&
+          entryForm.controls['description'].touched
+        "
       />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          entryForm.controls['description'].invalid &&
+          entryForm.controls['description'].touched
+        "
+      >
+        Description is required
+      </div>
     </div>
 
     <div class="row">
       <!-- date -->
       <div class="form-group mb-3 col-6">
         <label class="form-label" for="inputDate"><small>Date:</small></label>
-        <div class="input-group">
-          <input
-            class="form-control"
-            type="date"
-            name="inputDate"
-            formControlName="date"
-          />
+        <input
+          class="form-control"
+          type="date"
+          name="inputDate"
+          formControlName="date"
+          [class.is-invalid]="
+            entryForm.controls['date'].invalid &&
+            entryForm.controls['date'].touched
+          "
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            entryForm.controls['date'].invalid &&
+            entryForm.controls['date'].touched
+          "
+        >
+          Date is required
         </div>
       </div>
+
       <!-- settled -->
       <div class="form-group mb-3 col-6">
         <label for="settled" class="form-label"><small>Settled:</small></label>
-        <select id="settled" class="form-select" formControlName="settled">
+        <select
+          id="settled"
+          class="form-select"
+          formControlName="settled"
+          [class.is-invalid]="
+            entryForm.controls['settled'].invalid &&
+            entryForm.controls['settled'].touched
+          "
+        >
           <option selected></option>
           <option [value]="StatusType.SETTLED">Settled</option>
           <option [value]="StatusType.UNSETTLED">Unsettled</option>
         </select>
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            entryForm.controls['settled'].invalid &&
+            entryForm.controls['settled'].touched
+          "
+        >
+          Settled is required
+        </div>
       </div>
     </div>
 
@@ -85,24 +162,22 @@
         <span class="m-1 badge bg-dark">Dark</span>
       </div>
     </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        *ngIf="this.entryForm.value.id"
+        class="btn btn-danger"
+        (click)="delete()"
+      >
+        Delete
+      </button>
+      <button
+        type="submit"
+        [disabled]="this.entryForm.invalid"
+        class="btn btn-primary"
+      >
+        Save
+      </button>
+    </div>
   </form>
-</div>
-
-<div class="modal-footer">
-  <button
-    type="button"
-    *ngIf="this.entryForm.value.id"
-    class="btn btn-danger"
-    (click)="delete()"
-  >
-    Delete
-  </button>
-  <button
-    type="button"
-    [disabled]="!this.entryForm.valid"
-    class="btn btn-primary"
-    (click)="save()"
-  >
-    Save
-  </button>
 </div>
