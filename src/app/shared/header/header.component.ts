@@ -11,7 +11,7 @@ export class HeaderComponent {
   collapsed = true;
   faBars = faBars;
 
-  SideNavToggle() {
+  sideNavToggle() {
     this.collapsed = !this.collapsed;
     this.sideNavToggled.emit(this.collapsed);
   }

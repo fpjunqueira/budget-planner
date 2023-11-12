@@ -3,9 +3,6 @@ nav {
 }
 
 .side-nav-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -15,3 +12,6 @@ nav {
   border-radius: 10px;
 }
 
+.profile-logo {
+  margin-left: auto;
+}

@@ -23,6 +23,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EntryFormModalComponent } from './main/cash-flow/entry-form-modal/entry-form-modal.component';
+import { EntryLabelComponent } from './main/cash-flow/entry-label/entry-label.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EntryFormModalComponent } from './main/cash-flow/entry-form-modal/entry
     CashFlowComponent,
     EntryComponent,
     EntryFormModalComponent,
+    EntryLabelComponent,
   ],
   imports: [
     BrowserModule,
