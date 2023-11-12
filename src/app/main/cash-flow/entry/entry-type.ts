@@ -1,4 +1,4 @@
 export enum EntryType {
-  'INCOMING',
-  'OUTGOING',
+  INCOMING = 'Incoming',
+  OUTGOING = 'Outgoing'
 }

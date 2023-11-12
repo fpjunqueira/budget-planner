@@ -9,8 +9,10 @@ import {
   providedIn: 'root',
 })
 export class CashFlowService {
+  private readonly newProperty = 'entries';
+
   private entriesCollection: AngularFirestoreCollection<Entry> =
-    this.afs.collection('entries');
+    this.afs.collection(this.newProperty);
 
   constructor(private afs: AngularFirestore) {}
 
@@ -18,7 +20,17 @@ export class CashFlowService {
     return this.entriesCollection.valueChanges();
   }
 
-  addEntry(entry: Entry) {
-    return from(this.entriesCollection.add(entry));
+  addEntry(entry: Entry): Observable<void> {
+    entry.id = this.afs.createId();
+    return from(this.entriesCollection.doc(entry.id).set(entry));
   }
+
+  deleteEntry(entry: Entry): Observable<void> {
+    return from(this.entriesCollection.doc(entry.id).delete());
+  }
+
+  updateEntry(entry: Entry): Observable<void> {
+    return from(this.entriesCollection.doc(entry.id).set(entry));
+  }
+
 }

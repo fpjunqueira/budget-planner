@@ -6,6 +6,8 @@ import { ENTRY_DATA } from '../entry.injection-token';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CashFlowService } from '../cash-flow.service';
 import { catchError, of } from 'rxjs';
+import { EntryType } from '../entry/entry-type';
+import { StatusType } from '../status-type';
 
 @Component({
   selector: 'app-entry-form-modal',
@@ -13,8 +15,10 @@ import { catchError, of } from 'rxjs';
   styleUrls: ['./entry-form-modal.component.scss'],
 })
 export class EntryFormModalComponent implements OnInit {
-  action: ActionType = ActionType.SAVE;
+  action: ActionType;
   ActionType = ActionType;
+  EntryType = EntryType;
+  StatusType = StatusType;
   entryForm: FormGroup;
 
   constructor(
@@ -30,6 +34,7 @@ export class EntryFormModalComponent implements OnInit {
 
   private buildEntryForm() {
     if (this.entry) {
+      this.action = ActionType.EDIT;
       this.entryForm = this.fb.group({
         id: [this.entry.id],
         description: [this.entry.description, [Validators.required]],
@@ -40,13 +45,14 @@ export class EntryFormModalComponent implements OnInit {
         amount: [this.entry.amount, [Validators.required]],
       });
     } else {
+      this.action = ActionType.ADD;
       this.entryForm = this.fb.group({
         id: [undefined],
         description: ['', [Validators.required]],
         type: ['', [Validators.required]],
         date: ['', [Validators.required]],
         labels: this.fb.array(['']),
-        settled: [false, [Validators.required]],
+        settled: ['', [Validators.required]],
         amount: [0, [Validators.required]],
       });
     }
@@ -54,36 +60,36 @@ export class EntryFormModalComponent implements OnInit {
 
   save() {
     const entryData: Entry = this.entryForm.value;
-
     if (!entryData.id) {
       this.addEntry(entryData);
     } else {
-      this.editEntry(entryData);
+      this.updateEntry(entryData);
     }
-
-    console.log('Saving', entryData);
-
-    alert('Success');
     this.activeModal.close();
   }
 
-  editEntry(entryData: Entry) {
-    // this.service.addEntries
+  addEntry(entry: Entry) {
+    this.service.addEntry(entry).subscribe({
+      next: () => alert('Entry Added'),
+      error: (err) => console.error('Error', err),
+      complete: () => console.log('Complete'),
+    });
   }
 
-  addEntry(entryData: Entry) {
-    this.service
-      .addEntry(entryData)
-      .pipe(
-        catchError((error) => {
-          console.error('Error on saving', error);
-          return of(error);
-        })
-      )
-      .subscribe({
-        next: (data) => alert('Succes on saving' + data),
-        error: (err) => console.error('Error', err),
-        complete: () => console.log('Compolete'),
-      });
+  updateEntry(entry: Entry) {
+    this.service.updateEntry(entry).subscribe({
+      next: () => alert('Entry Updated'),
+      error: (err) => console.error('Error', err),
+      complete: () => console.log('Complete'),
+    });
+  }
+
+  delete() {
+    this.service.deleteEntry(this.entryForm.value).subscribe({
+      next: () => alert('Entry Deleted'),
+      error: (err) => console.error('Error', err),
+      complete: () => console.log('Complete'),
+    });
+    this.activeModal.close();
   }
 }

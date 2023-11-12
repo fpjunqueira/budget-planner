@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Entry } from './entry.model';
 import { EntryType } from './entry-type';
+import { StatusType } from '../status-type';
 
 @Component({
   selector: 'app-entry',
@@ -19,6 +20,7 @@ export class EntryComponent {
   @Output() entryClicked = new EventEmitter<Entry>();
 
   EntryType = EntryType;
+  StatusType = StatusType;
   faArrowTrendDown = faArrowTrendDown;
   faArrowTrendUp = faArrowTrendUp;
   faCircleXmark = faCircleXmark;

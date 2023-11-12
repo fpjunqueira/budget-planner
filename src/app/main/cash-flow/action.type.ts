@@ -1,4 +1,4 @@
 export enum ActionType {
-  SAVE,
-  UPDATE,
+  ADD,
+  EDIT,
 }

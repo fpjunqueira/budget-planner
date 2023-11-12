@@ -1,6 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { Entry } from './entry/entry.model';
-import { entryData } from './entry-data.mock';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ActionType } from './action.type';
 import { EntryFormModalComponent } from './entry-form-modal/entry-form-modal.component';
@@ -17,9 +16,8 @@ export class CashFlowComponent implements OnInit{
   entries$: Observable<Entry[]>;
 
   monthName = new Date().toLocaleString('default', { month: 'long' });
-  // entries: Entry[] = entryData();
   modalRef: NgbModalRef;
-  action: ActionType = ActionType.SAVE;
+  action: ActionType = ActionType.ADD;
   ActionType = ActionType;
 
   constructor(private activeModal: NgbModal, private service: CashFlowService,) {}
