@@ -5,9 +5,9 @@ import { Entry } from '../entry/entry.model';
 import { ENTRY_DATA } from '../entry.injection-token';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CashFlowService } from '../cash-flow.service';
-import { catchError, of } from 'rxjs';
 import { EntryType } from '../entry/entry-type';
 import { StatusType } from '../status-type';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-entry-form-modal',
@@ -19,6 +19,8 @@ export class EntryFormModalComponent implements OnInit {
   ActionType = ActionType;
   EntryType = EntryType;
   StatusType = StatusType;
+  faPlus = faPlus;
+
   entryForm: FormGroup;
 
   constructor(
@@ -91,5 +93,9 @@ export class EntryFormModalComponent implements OnInit {
       complete: () => console.log('Complete'),
     });
     this.activeModal.close();
+  }
+
+  addBadge() {
+    // TODO: throw new Error('Method not implemented.');
   }
 }
