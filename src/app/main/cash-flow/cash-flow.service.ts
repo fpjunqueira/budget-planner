@@ -9,10 +9,10 @@ import {
   providedIn: 'root',
 })
 export class CashFlowService {
-  private readonly newProperty = 'entries';
+  private readonly entries = 'entries';
 
   private entriesCollection: AngularFirestoreCollection<Entry> =
-    this.afs.collection(this.newProperty);
+    this.afs.collection(this.entries);
 
   constructor(private afs: AngularFirestore) {}
 
