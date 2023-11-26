@@ -7,9 +7,9 @@
     <div>
       <button class="btn-sm btn btn-primary small" (click)="add()">Add+</button>
     </div>
-    <h3>IN: R$ {{ totalIncomming }}</h3>
-    <h3>Out: R$ {{ totalOutgoing }}</h3>
-    <h3>Amount: R$ {{ amount }}</h3>
+    <h3>IN: R$ {{ totalIncomming | currency }}</h3>
+    <h3>Out: R$ {{ totalOutgoing | currency }}</h3>
+    <h3>Amount: R$ {{ amount | currency }}</h3>
   </div>
 
   <div>

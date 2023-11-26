@@ -33,19 +33,22 @@ export class CashFlowComponent implements OnInit {
     this.service.getEntries().subscribe((entries) => {
       console.log(entries);
       this.entries = entries;
-
-      this.totalIncomming = entries
-        .filter((entry) => entry.type === EntryType.INCOMING)
-        .map((entry) => entry.amount)
-        .reduce((prev, curr) => prev + curr);
-
-      this.totalOutgoing = entries
-        .filter((entry) => entry.type === EntryType.OUTGOING)
-        .map((entry) => entry.amount)
-        .reduce((prev, curr) => prev + curr);
-
-      this.amount = this.totalIncomming - this.totalOutgoing;
+      this.updateAmount();
     });
+  }
+
+  private updateAmount() {
+    this.totalIncomming = this.entries
+      .filter((entry) => entry.type === EntryType.INCOMING)
+      .map((entry) => entry.amount)
+      .reduce((prev, curr) => prev + curr, 0);
+
+    this.totalOutgoing = this.entries
+      .filter((entry) => entry.type === EntryType.OUTGOING)
+      .map((entry) => entry.amount)
+      .reduce((prev, curr, ) => prev + curr, 0);
+
+    this.amount = this.totalIncomming - this.totalOutgoing;
   }
 
   add() {
