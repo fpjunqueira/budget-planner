@@ -2,11 +2,9 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { Entry } from './entry/entry.model';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ActionType } from './action.type';
-import { EntryFormModalComponent } from './entry-form-modal/entry-form-modal.component';
-import { ENTRY_DATA } from './entry.injection-token';
-import { Observable } from 'rxjs';
+import { EntryFormModalComponent } from './entry/entry-form-modal/entry-form-modal.component';
+import { ENTRY_DATA } from './entry/entry.injection-token';
 import { CashFlowService } from './cash-flow.service';
-import { StatusType } from './status-type';
 import { EntryType } from './entry/entry-type';
 
 @Component({
@@ -21,7 +19,6 @@ export class CashFlowComponent implements OnInit {
   totalIncomming: number = 0.0;
   totalOutgoing: number = 0.0;
 
-
   monthName = new Date().toLocaleString('default', { month: 'long' });
   modalRef: NgbModalRef;
   action: ActionType = ActionType.ADD;
@@ -33,8 +30,6 @@ export class CashFlowComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.entries$ = this.service.getEntries();
-
     this.service.getEntries().subscribe((entries) => {
       console.log(entries);
       this.entries = entries;
@@ -50,15 +45,6 @@ export class CashFlowComponent implements OnInit {
         .reduce((prev, curr) => prev + curr);
 
       this.amount = this.totalIncomming - this.totalOutgoing;
-
-      // const negative = entries
-      //   .filter((entry) => entry.settled === StatusType.SETTLED)
-      //   .map((entry) => entry.amount)
-      //   .reduce((prev, curr) => prev + curr);
-
-      console.log(
-        entries.filter((entry) => entry.settled === StatusType.SETTLED)
-      );
     });
   }
 

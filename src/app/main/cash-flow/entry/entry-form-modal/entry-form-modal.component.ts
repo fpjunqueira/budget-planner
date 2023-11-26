@@ -1,12 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { ActionType } from '../action.type';
+import { ActionType } from '../../action.type';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Entry } from '../entry/entry.model';
+import { Entry } from '../entry.model';
 import { ENTRY_DATA } from '../entry.injection-token';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CashFlowService } from '../cash-flow.service';
-import { EntryType } from '../entry/entry-type';
-import { StatusType } from '../status-type';
+import { CashFlowService } from '../../cash-flow.service';
+import { EntryType } from '../entry-type';
+import { StatusType } from '../../status-type';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -96,6 +96,7 @@ export class EntryFormModalComponent implements OnInit {
   }
 
   addBadge() {
-    // TODO: throw new Error('Method not implemented.');
+    // TODO
+    throw new Error('Method not implemented.');
   }
 }
