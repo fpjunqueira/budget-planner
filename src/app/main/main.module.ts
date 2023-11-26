@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,8 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule,
     AppRoutingModule,
     NgbModule,
-
-
-  ]
+    SharedModule,
+  ],
+  exports: [MainComponent],
 })
-export class MainModule { }
+export class MainModule {}
