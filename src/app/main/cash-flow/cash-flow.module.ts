@@ -9,6 +9,7 @@ import { EntryFormModalComponent } from './entry/entry-form-modal/entry-form-mod
 import { EntryLabelComponent } from './entry/entry-label/entry-label.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CashFlowRoutingModule } from './cash-flow-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     EntryFormModalComponent,
     EntryLabelComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    CashFlowRoutingModule,
+  ],
 })
 export class CashFlowModule {}

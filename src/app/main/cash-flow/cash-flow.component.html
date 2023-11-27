@@ -4,12 +4,15 @@
 
 <div class="actions">
   <div class="d-flex justify-content-between">
-    <div>
       <button class="btn-sm btn btn-primary small" (click)="add()">Add+</button>
-    </div>
-    <h3>IN: R$ {{ totalIncomming | currency }}</h3>
-    <h3>Out: R$ {{ totalOutgoing | currency }}</h3>
-    <h3>Amount: R$ {{ amount | currency }}</h3>
+
+      <!-- TODO: componente amounts -->
+      <div class="amounts d-flex p-2">
+        <h3>IN: R$ {{ totalIncomming | currency : "BRL" : "symbol" : "1.2-2" }}</h3>
+        <h3>Out: R$ {{ totalOutgoing | currency : "BRL" : "symbol" : "1.2-2" }}</h3>
+        <h3>Amount: R$ {{ amount | currency : "BRL" : "symbol" : "1.2-2" }}</h3>
+      </div>
+
   </div>
 
   <div>
