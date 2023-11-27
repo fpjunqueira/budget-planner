@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SpendingComponent } from './spending/spending.component';
-import { AnalyticsComponent } from './analytics/analytics.component';
-import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {

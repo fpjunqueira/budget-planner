@@ -9,9 +9,9 @@ import { BrowserModule } from '@angular/platform-browser';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MainModule,
     AuthModule,
+    MainModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
