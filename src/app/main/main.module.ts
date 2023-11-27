@@ -3,7 +3,6 @@ import { MainRoutingModule } from './main-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -17,7 +16,6 @@ import { CashFlowModule } from './cash-flow/cash-flow.module';
   declarations: [DashboardComponent, HomeComponent, MainComponent],
   imports: [
     MainRoutingModule,
-    BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
