@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
-
   onSubmit() {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
@@ -32,5 +30,12 @@ export class LoginComponent implements OnInit {
       },
       error: () => alert('You are not registered!'),
     });
+  }
+
+  loginWithGoogle() {
+    throw new Error('Method not implemented.');
+  }
+  register() {
+    this.router.navigateByUrl('auth/register');
   }
 }

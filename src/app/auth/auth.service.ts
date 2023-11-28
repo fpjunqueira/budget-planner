@@ -33,9 +33,7 @@ export class AuthService {
       switchMap((u: firebase.auth.UserCredential) =>
         this.userCollection.doc(u.user.uid).set({ ...user, id: u.user.uid })
       ),
-      catchError((error) =>
-        throwError(() => new Error('Error on adding user', error))
-      )
+      catchError((error) => throwError(() => new Error(error.message)))
     );
   }
 

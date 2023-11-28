@@ -32,7 +32,7 @@ export class RegisterComponent {
         alert('Successfully registered. User your new credentials to sign in!');
         this.router.navigateByUrl('/login');
       },
-      error: () => alert('You are not registered!'),
+      error: (err) => alert(err),
     });
   }
 }
