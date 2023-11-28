@@ -1,11 +1,11 @@
-  <nav class="navbar navbar-expand navbar-dark bg-dark px-2 ">
-    <div class="side-nav-button px-2 me-3 text-light " (click)="sideNavToggle()">
-      <fa-icon [icon]="faBars"></fa-icon>
-    </div>
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+  <div class="side-nav-button px-2 me-3 text-light" (click)="sideNavToggle()">
+    <fa-icon [icon]="faBars"></fa-icon>
+  </div>
 
-    <a class="navbar-brand px-4" href="#">$ Budget Planner</a>
+  <a class="navbar-brand px-4" href="#">$ Budget Planner</a>
 
-    <!-- <div class="navbar-collapse">
+  <!-- <div class="navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="nav-item dropdown">
           <a
@@ -28,16 +28,16 @@
       <button class="btn btn-outline-light" type="submit">Search</button>
     </form> -->
 
-    <div class="profile-logo dropstart ml-auto">
-      <button
-        class="btn btn-outline-light dropdown-toggle"
-        data-bs-toggle="dropdown"
-      >
-        Felipe Junqueira
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark ">
-        <li><a href="" class="dropdown-item">Your Profile</a></li>
-        <li><a (click)="logout()" class="dropdown-item">Log Out</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="profile-logo dropstart ml-auto">
+    <button
+      class="btn btn-outline-light dropdown-toggle"
+      data-bs-toggle="dropdown"
+    >
+      {{ userName }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a href="" class="dropdown-item">Your Profile</a></li>
+      <li><a (click)="logout()" class="dropdown-item">Log Out</a></li>
+    </ul>
+  </div>
+</nav>
