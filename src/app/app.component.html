@@ -1,6 +1,5 @@
-<!-- TODO: user is logged? -->
-@if (false) {
-  <app-main></app-main>
+@if(authenticated$  | async; as user) {
+<app-main></app-main>
 } @else {
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 }
