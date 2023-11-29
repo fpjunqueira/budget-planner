@@ -35,10 +35,8 @@ export class AuthService {
       switchMap((u: firebase.auth.UserCredential) =>
         this.userCollection.doc(u.user.uid).set({
           id: u.user.uid,
-          email: user.email,
-          firstname: user.firstname,
-          lastname: user.lastname,
-          phone: user.phone,
+          email: u.user.email,
+          name: user.name,
         })
       ),
       catchError((error) => throwError(() => new Error(error.message)))
@@ -93,9 +91,7 @@ export class AuthService {
       const newUser: User = {
         id: user.user.uid,
         email: user.user.email,
-        firstname: user.user.displayName,
-        lastname: '',
-        phone: '',
+        name: user.user.displayName,
       };
       await this.userCollection.doc(user.user.uid).set(newUser);
       return newUser;

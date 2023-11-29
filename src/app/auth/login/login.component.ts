@@ -25,7 +25,7 @@ export class LoginComponent {
     const password = this.loginForm.value.password;
     this.auth.login(email, password).subscribe({
       next: (user) => {
-        console.log('User logged in', user.firstname);
+        console.log('User logged in', user.name);
         this.router.navigateByUrl('/');
       },
       error: () => alert('You are not registered!'),
