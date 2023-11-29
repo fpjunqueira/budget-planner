@@ -27,7 +27,8 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    this.auth.register(this.registerForm.value as User).subscribe({
+    const userForm = this.registerForm.value as User;
+    this.auth.register(userForm).subscribe({
       next: () => {
         alert('Successfully registered. User your new credentials to sign in!');
         this.router.navigateByUrl('/login');

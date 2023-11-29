@@ -37,6 +37,7 @@ export class CashFlowComponent implements OnInit {
     });
   }
 
+  // TODO: create testable service
   private updateAmount() {
     this.totalIncomming = this.entries
       .filter((entry) => entry.type === EntryType.INCOMING)

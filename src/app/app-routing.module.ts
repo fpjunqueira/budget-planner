@@ -8,6 +8,8 @@ import { AnalyticsComponent } from './main/analytics/analytics.component';
 import { SettingsComponent } from './main/settings/settings.component';
 
 const routes: Routes = [
+  // TODO: page not found
+  // TODO: match-full path
   {
     path: '',
     redirectTo: 'home',

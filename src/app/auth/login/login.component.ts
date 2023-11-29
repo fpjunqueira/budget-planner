@@ -33,7 +33,9 @@ export class LoginComponent {
   }
 
   loginWithGoogle() {
-    throw new Error('Method not implemented.');
+    this.auth.loginWithGoogle().subscribe(() => {
+      this.router.navigateByUrl('/');
+    });
   }
   register() {
     this.router.navigateByUrl('auth/register');
