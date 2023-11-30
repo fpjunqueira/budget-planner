@@ -31,27 +31,33 @@ export function navData(): NavItem[] {
     },
     {
       number: '3',
-      name: 'Dashboard',
+      name: 'Labels',
       icon: faDashboard,
-      routeLink: 'dashboard'
+      routeLink: 'labels'
     },
-    {
-      number: '4',
-      name: 'Spending',
-      icon: faMoneyBill1Wave,
-      routeLink: 'spending'
-    },
-    {
-      number: '5',
-      name: 'Analytics',
-      icon: faChartLine,
-      routeLink: 'analytics'
-    },
-    {
-      number: '6',
-      name: 'Settings',
-      icon: faToolbox,
-      routeLink: 'settings'
-    },
+    // {
+    //   number: '3',
+    //   name: 'Dashboard',
+    //   icon: faDashboard,
+    //   routeLink: 'dashboard'
+    // },
+    // {
+    //   number: '4',
+    //   name: 'Spending',
+    //   icon: faMoneyBill1Wave,
+    //   routeLink: 'spending'
+    // },
+    // {
+    //   number: '5',
+    //   name: 'Analytics',
+    //   icon: faChartLine,
+    //   routeLink: 'analytics'
+    // },
+    // {
+    //   number: '6',
+    //   name: 'Settings',
+    //   icon: faToolbox,
+    //   routeLink: 'settings'
+    // },
   ];
 }

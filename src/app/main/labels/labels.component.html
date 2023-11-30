@@ -1,0 +1,53 @@
+<p class="fs-1 fw-bold">Labels</p>
+
+<!-- labels -->
+<div class="form-group">
+  <label class="form-label" for="labels"><small>Labels:</small></label>
+  <div name="labels">
+    <span class="m-1 badge bg-primary">Primary</span>
+    <span class="m-1 badge bg-warning text-dark">Warning</span>
+
+    <button
+      class="btn btn-sm btn-outline-light"
+      type="button"
+      (click)="addBadge()"
+    >
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+  </div>
+
+  <!-- add-label -->
+  <div class="add-label">
+    <label class="form-label" for="add-labels"
+      ><small>Choose or create a new label:</small></label
+    >
+    <div class="add-labels p-2">
+      <span class="m-1 badge bg-primary">Primary</span>
+      <span class="m-1 badge bg-warning text-dark">Warning</span>
+      <span class="m-1 badge bg-secondary">Secondary</span>
+      <span class="m-1 badge bg-success">Success</span>
+      <span class="m-1 badge bg-danger">Danger</span>
+      <span class="m-1 badge bg-dark">Dark</span>
+      <span class="m-1 badge bg-primary">Primary</span>
+      <span class="m-1 badge bg-warning text-dark">Warning</span>
+      <span class="m-1 badge bg-secondary">Secondary</span>
+      <span class="m-1 badge bg-success">Success</span>
+      <span class="m-1 badge bg-danger">Danger</span>
+      <span class="m-1 badge bg-dark">Dark</span>
+      <span class="m-1 badge bg-primary">Primary</span>
+      <span class="m-1 badge bg-warning text-dark">Warning</span>
+      <span class="m-1 badge bg-secondary">Secondary</span>
+      <span class="m-1 badge bg-success">Success</span>
+    </div>
+  </div>
+  <!--
+    1. Arrumar componente de label
+    2. Carregar labels (componente) a partir do form-array (ver como adicionar dinamicamente)
+    3. Criar compomente add-labels (precisará ter a própria collection)
+    4. Drag and drop para excluir o label
+-->
+
+  <!-- <div id="badgeContainer">
+      <span class="badge badge-primary" *ngFor="let badge of badges">{{ badge }}</span>
+    </div> -->
+</div>

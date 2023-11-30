@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
 import { SharedModule } from '../shared/shared.module';
 import { CashFlowModule } from './cash-flow/cash-flow.module';
+import { LabelsModule } from './labels/labels.module';
 
 @NgModule({
   declarations: [DashboardComponent, HomeComponent, MainComponent],
@@ -23,6 +24,7 @@ import { CashFlowModule } from './cash-flow/cash-flow.module';
     NgbModule,
     SharedModule,
     CashFlowModule,
+    LabelsModule
   ],
   exports: [MainComponent],
 })
