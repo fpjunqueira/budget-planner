@@ -51,3 +51,33 @@
       <span class="badge badge-primary" *ngFor="let badge of badges">{{ badge }}</span>
     </div> -->
 </div>
+
+
+
+<hr class="hr">
+
+
+<div id="div1" (dragover)="allowDrop($event)" (drop)="drop($event)">
+  <!-- <img src="img_logo.gif"  id="drag1" width="336" height="69"> -->
+  <span class="m-1 badge bg-secondary" id="drag1" draggable="true" (dragstart)="drag($event)">Secondary</span>
+  <span class="m-1 badge bg-primary" id="drag2" draggable="true" (dragstart)="drag($event)">Primary</span>
+  <span class="m-1 badge bg-warning text-dark" id="drag3"  draggable="true" (dragstart)="drag($event)">Warning</span>
+  <span class="m-1 badge bg-secondary" id="drag4" draggable="true" (dragstart)="drag($event)">Secondary</span>
+  <!-- <span class="m-1 badge bg-success"  draggable="true" (dragstart)="drag($event)">Success</span>
+  <span class="m-1 badge bg-danger"  draggable="true" (dragstart)="drag($event)">Danger</span>
+  <span class="m-1 badge bg-dark"  draggable="true" (dragstart)="drag($event)">Dark</span>
+  <span class="m-1 badge bg-primary"  draggable="true" (dragstart)="drag($event)">Primary</span>
+  <span class="m-1 badge bg-warning text-dark"  draggable="true" (dragstart)="drag($event)">Warning</span>
+  <span class="m-1 badge bg-secondary"  draggable="true" (dragstart)="drag($event)">Secondary</span>
+  <span class="m-1 badge bg-success"  draggable="true" (dragstart)="drag($event)">Success</span>
+  <span class="m-1 badge bg-danger"  draggable="true" (dragstart)="drag($event)">Danger</span>
+  <span class="m-1 badge bg-dark"  draggable="true" (dragstart)="drag($event)">Dark</span>
+  <span class="m-1 badge bg-primary"  draggable="true" (dragstart)="drag($event)">Primary</span>
+  <span class="m-1 badge bg-warning text-dark"  draggable="true" (dragstart)="drag($event)">Warning</span>
+  <span class="m-1 badge bg-secondary"  draggable="true" (dragstart)="drag($event)">Secondary</span>
+  <span class="m-1 badge bg-success"  draggable="true" (dragstart)="drag($event)">Success</span> -->
+
+</div>
+
+<div id="div2" (dragover)="allowDrop($event)" (drop)="drop($event)"></div>
+

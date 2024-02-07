@@ -4,8 +4,6 @@
 
 <div class="actions">
   <div class="d-flex justify-content-between">
-    <button class="btn-sm btn btn-primary small" (click)="add()">Add+</button>
-
     <!-- TODO: componente amounts -->
 
     <!-- <div class="amout-info"> -->
@@ -33,5 +31,11 @@
       [entry]="entry"
       (entryClicked)="update($event)"
     ></app-entry>
+  </div>
+
+  <div class="d-flex flex-column">
+    <button class="btn-sm btn btn-primary small mt-2" (click)="add()">
+      Add+
+    </button>
   </div>
 </div>

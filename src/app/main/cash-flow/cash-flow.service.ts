@@ -33,6 +33,7 @@ export class CashFlowService {
     return from(this.entriesCollection.doc(entry.id).set(entry));
   }
 
+  // TODO
   // loadByMonth(name: String): Observable<Entry[]> {
   //   return
   // }
